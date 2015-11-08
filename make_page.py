@@ -1,9 +1,6 @@
 
+import csv
 import os
-
-lst = os.listdir('./data')
-
-pdfs = filter(lambda x: x.endswith('.pdf'), lst)
 
 template = """
           <html>
@@ -23,9 +20,10 @@ elem = "<li>{}</li>"
 
 contents = []
 
-for pdf in pdfs:
-    item = elem.format('<a href="./data/{}">{}</a>'.format(pdf, pdf))
-    contents.append(item)
+with open('./entries.csv') as f:
+    for hsh, msg, link in csv.reader(f):
+        item = elem.format('{} {} <a href="./data/{}">pdf</a>'.format(hsh, msg, link))
+        contents.append(item)
 
 page = template.format("\n".join(contents))
 
