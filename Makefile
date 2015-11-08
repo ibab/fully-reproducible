@@ -16,11 +16,9 @@ publish: paper.pdf
 	@git clone -b gh-pages https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git _deploy
 	cp paper.pdf _deploy/data/${target}.pdf
 	cp make_page.py _deploy
-	cd _deploy
-	ls -R
-	echo ${target},${message},data/${target}.pdf >> entries.csv
-	python make_page.py
-	git add entries.csv index.html ./data/${target}.pdf
-	git commit -m "Add automatically to gh-pages" || true
-	@git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
+	cd _deploy; echo ${target},${message},data/${target}.pdf >> entries.csv
+	cd _deploy; python make_page.py
+	cd _deploy; git add entries.csv index.html ./data/${target}.pdf
+	cd _deploy; git commit -m "Add automatically to gh-pages" || true
+	@cd _deploy; git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
 
