@@ -7,7 +7,7 @@ paper.pdf: paper.tmp.tex
 	lualatex --jobname=paper paper.tmp.tex
 
 paper.tmp.tex: paper.tex
-	python process.py run.py paper.tex
+	python .meta/process.py run.py paper.tex
 
 clean:
 	rm *.pdf *.aux *.log paper.tmp.tex
@@ -15,7 +15,7 @@ clean:
 publish: paper.pdf
 	@git clone -b gh-pages https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git _deploy
 	cp paper.pdf _deploy/data/${target}.pdf
-	cp make_page.py _deploy
+	cp  .meta/make_page.py _deploy
 	git config --global user.email ""
 	git config --global user.name "Automatic travis commit"
 	cd _deploy; echo ${target},${message},data/${target}.pdf >> entries.csv
