@@ -21,7 +21,7 @@ elem = "<li>{}</li>"
 contents = []
 
 with open('./entries.csv') as f:
-    for hsh, msg, link in csv.reader(f):
+    for hsh, msg, link in list(csv.reader(f))[::-1]:
         item = elem.format('{} {} <a href="./{}">pdf</a>'.format(hsh, msg, link))
         contents.append(item)
 
