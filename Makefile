@@ -17,6 +17,7 @@ publish: paper.pdf
 	cp paper.pdf _deploy/data/${target}.pdf
 	cp make_page.py _deploy
 	cd _deploy
+	ls -R
 	echo ${target},${message},data/${target}.pdf >> entries.csv
 	python make_page.py
 	git add entries.csv index.html ./data/${target}.pdf
