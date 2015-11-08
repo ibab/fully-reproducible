@@ -9,9 +9,14 @@ template = """
             </head>
             <body>
               <h1>Paper overview</h1>
-              <ul>
+              <table>
+              <tr>
+                <th>hash</th>
+                <th>message</th>
+                <th>PDF</th>
+              </tr>
               {}
-              </ul>
+              </table>
             </body>
           </html>
        """
@@ -22,7 +27,7 @@ contents = []
 
 with open('./entries.csv') as f:
     for hsh, msg, link in list(csv.reader(f))[::-1]:
-        item = elem.format('{} {} <a href="./{}">pdf</a>'.format(hsh, msg, link))
+        item = elem.format('<tr><td>{}</td><td>{}</td><td><a href="./{}">pdf</a></tr></td>'.format(hsh, msg, link))
         contents.append(item)
 
 page = template.format("\n".join(contents))
