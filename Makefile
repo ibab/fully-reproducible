@@ -15,7 +15,8 @@ clean:
 add_pages: paper.pdf
 	mkdir -p ./data
 	mv paper.pdf data/${target}.pdf
-	git checkout -f origin/gh-pages
+	git fetch origin
+	git checkout -f gh-pages
 	git checkout master -- make_page.py
 	echo ${target},${message},data/${target}.pdf >> entries.csv
 	python make_page.py
@@ -24,6 +25,6 @@ add_pages: paper.pdf
 	git checkout ${branch}
 
 publish: add_pages
-	git checkout origin/gh-pages
+	git checkout gh-pages
 	@git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
 
