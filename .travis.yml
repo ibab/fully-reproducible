@@ -5,8 +5,8 @@ branches:
 python:
 - '3.5'
 install:
-- pip install --user -r requirements.txt
-- pip install --user ghp-import
+- pip install -r requirements.txt
+- pip install ghp-import
 script:
 - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && make publish'
 notifications:
