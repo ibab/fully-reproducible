@@ -15,8 +15,6 @@ clean:
 publish: paper.pdf
 	@git clone -b gh-pages https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git _deploy
 	cp paper.pdf _deploy/data/${target}.pdf
-	git fetch --all
-	git checkout -f origin/gh-pages
 	cp make_page.py _deploy
 	cd _deploy
 	echo ${target},${message},data/${target}.pdf >> entries.csv
