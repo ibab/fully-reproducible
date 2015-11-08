@@ -1,2 +1,2 @@
-jinja
+jinja2
 uncertainties
