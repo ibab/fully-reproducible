@@ -25,6 +25,6 @@ add_pages: paper.pdf
 
 publish: add_pages
 	git checkout gh-pages
-	git push origin gh-pages
+	@git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
 	git checkout ${branch}
 
