@@ -4,7 +4,7 @@ branch=$(shell git rev-parse --abbrev-ref HEAD)
 message=$(shell git log -n 1 --pretty=format:%s)
 
 paper.pdf: paper.tmp.tex
-	texfot lualatex --jobname=paper paper.tmp.tex
+	lualatex --jobname=paper paper.tmp.tex
 
 paper.tmp.tex: paper.tex
 	python process.py run.py paper.tex
