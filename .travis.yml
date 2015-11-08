@@ -6,7 +6,6 @@ branches:
 python:
 - '3.5'
 install:
-- sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-extra-utils
 - pip install -r requirements.txt
 - pip install ghp-import
 script:
@@ -16,3 +15,9 @@ notifications:
 env:
   global:
     secure: Lgoz3bRQA2V9lWWasGrqzZJLXJJZEpI10RIGE67oeYI7/3ubgG95fEh9q7+eHrap/Rdf34xuZ6fZaBBuMl8TxotQpil592ONtVU6FibOeJiCGH2UEyGccL6f7ScLmFFIeDFP/O55KeNKJPwe6j1JhiHw/uSBQUpMw4y+5faUiBI1Ztz6VeOeOVHdnRJMAHCMVN2fYI/UBVWn38HqHbboQnTxGhgpmK+dhjr3Lev2tMbvtXEVG/Yq7ilUI9bzVMTzK2LnOAk64C/bKix/wRDhN1dMP705XkzIiNzlFUwa/bAWOaAdhcGGUtFsY8PZZP75GbBL4j3ftrkZ5goK5CY23IjUN10cgWvvp+GFeY2be8+qfU589sOdPweisyUXqfbpF4ti64i2bNRZQEj5Bez3Kpmbq7sWV3qh2UkVaRV1rwEwIYCuTYj3RxVUWnbGy6Venb0TeYWv3OyrSGQ4/3zz5mgp7aI9PgTOf+4cX94rM9xSg7anmS59N269XLfY491ys4JUfdVwU0HIlXzb4Rw/gcepw0MZz/OJiGvtQdx19X16FuwGoK+an4m/M0zYHFcNj15APpKqFiZD68lK5c/NfShabkGLyoKRwtODZbHVwSz4kANcfYC4xJ8H16aZa1Gvy9IQqVpZvH4BbkV9Eg9v3+fTcvH+NryUjV4K4eLwwW4=
+addons:
+  apt:
+    packages:
+        - texlive-latex-recommended
+        - texlive-latex-extra
+        - texlive-extra-utils
