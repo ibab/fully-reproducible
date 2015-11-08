@@ -10,7 +10,7 @@ template = """
             </head>
             <body>
               <h1>Paper overview</h1>
-              <table>
+              <table class="table">
               <tr>
                 <th>hash</th>
                 <th>message</th>
