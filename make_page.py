@@ -22,7 +22,7 @@ contents = []
 
 with open('./entries.csv') as f:
     for hsh, msg, link in csv.reader(f):
-        item = elem.format('{} {} <a href="./data/{}">pdf</a>'.format(hsh, msg, link))
+        item = elem.format('{} {} <a href="./{}">pdf</a>'.format(hsh, msg, link))
         contents.append(item)
 
 page = template.format("\n".join(contents))
