@@ -5,6 +5,7 @@ branches:
 python:
 - '3.5'
 install:
+- apt-get install texlive-latex-recommended texlive-latex-extra
 - pip install -r requirements.txt
 - pip install ghp-import
 script:
