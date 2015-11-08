@@ -15,7 +15,7 @@ clean:
 add_pages: paper.pdf
 	mkdir -p ./data
 	mv paper.pdf data/${target}.pdf
-	git fetch origin
+	git fetch --all
 	git checkout -f gh-pages
 	git checkout master -- make_page.py
 	echo ${target},${message},data/${target}.pdf >> entries.csv
