@@ -26,7 +26,7 @@ contents = []
 
 with open('./entries.csv') as f:
     for hsh, msg, link in list(csv.reader(f))[::-1]:
-        item = '<tr><td>{}</td><td>{}</td><td><a href="./{}">pdf</a></td></tr>'.format(hsh, msg, link)
+        item = '<tr><td>{}</td><td class="col-md-5">{}</td><td><a href="./{}">pdf</a></td></tr>'.format(hsh, msg, link)
         contents.append(item)
 
 page = template.format("\n".join(contents))
