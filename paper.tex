@@ -1,11 +1,22 @@
 
 \documentclass{article}
 
+\usepackage{booktabs}
+
 \begin{document}
 
 \section{First section}
 
 The answer is << answer**5 >>.
+
+\begin{table}
+\caption{An example table}
+\begin{tabular}{l l}
+#< for a, b in data >#
+<< a >> & << b >> \\
+#< endfor >#
+\end{tabular}
+\end{table}
 
 \end{document}
 
