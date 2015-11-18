@@ -11,7 +11,7 @@ template = """
             <body>
               <div class="container">
                   <h1>Paper overview</h1>
-                  <table class="table">
+                  <table class="table table-bordered">
                   <tr>
                     <th>message</th>
                     <th>PDF</th>
