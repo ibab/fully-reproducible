@@ -12,9 +12,13 @@ The answer is << answer**5 >>.
 \begin{table}
 \caption{An example table}
 \begin{tabular}{l l}
+\toprule
+a & b \\
+\midrule
 #< for a, b in data >#
 << a >> & << b >> \\
 #< endfor >#
+\bottomrule
 \end{tabular}
 \end{table}
 
