@@ -8,7 +8,7 @@ The variables defined in that script are then made available to the jinja2 templ
 Travis fills in the template and compiles `paper.tex` into a PDF file, which it then uploads to the `gh-pages` branch of this repository. (See https://ibab.github.io/fully-reproducible for the rendered web page)
 This means that each stage of the analysis is represented as a git commit with a corresponding PDF file.
 
-Once all researchers agree on a commit that should represent the final stage of their paper, they can use `git tag` to mark it as the official final version.
+Once all researchers agree on a commit that should represent the final version of their paper, they can use `git tag` to mark it as the official final version.
 When the paper is in review, corrections can in turn be marked with `git tag`.
 
 All of this makes it very easy for researchers to collaborate.
